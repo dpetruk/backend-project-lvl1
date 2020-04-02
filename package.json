@@ -1,13 +1,16 @@
 {
   "name": "backend-project-lvl1",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
+    "type": "mudule",
     "url": "git+https://github.com/dpetruk/backend-project-lvl1.git"
   },
   "author": "Dmitry Petrouk",
