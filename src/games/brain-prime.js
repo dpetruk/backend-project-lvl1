@@ -3,10 +3,9 @@ import getRandomInt from '../getRandomInt.js';
 
 const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const getExpression = () => `${getRandomInt(1000)}`;
+const getNumber = () => getRandomInt(1000);
 
-const getExpectedAnswer = (expression) => {
-  const number = Number(expression);
+const isPrime = (number) => {
   const threshold = Math.floor(number / 2);
   for (let i = 2; i <= threshold; i += 1) {
     if (number % i === 0) return 'no';
@@ -14,4 +13,13 @@ const getExpectedAnswer = (expression) => {
   return 'yes';
 };
 
-export default game(gameRule, getExpression, getExpectedAnswer);
+const getGameData = () => {
+  const number = getNumber();
+  const expression = `${number}`;
+
+  const expectedAnswer = isPrime(number);
+
+  return [expression, expectedAnswer];
+};
+
+export default game(gameRule, getGameData);

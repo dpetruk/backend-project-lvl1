@@ -3,10 +3,10 @@ import getRandomInt from '../getRandomInt.js';
 
 const gameRule = 'Find the greatest common divisor of given numbers.';
 
-const getExpression = () => {
+const getNumbers = () => {
   const number1 = getRandomInt(100);
   const number2 = getRandomInt(100);
-  return `${number1} ${number2}`;
+  return [number1, number2];
 };
 
 const findGCD = (a, b, div) => {
@@ -16,12 +16,14 @@ const findGCD = (a, b, div) => {
   return findGCD(a, b, div - 1);
 };
 
-const getExpectedAnswer = (expression) => {
-  const numbers = expression.split(' ');
-  const number1 = Number(numbers[0]);
-  const number2 = Number(numbers[1]);
+const getGameData = () => {
+  const [number1, number2] = getNumbers();
+  const expression = `${number1} ${number2}`;
+
   const min = Math.min(number1, number2);
-  return `${findGCD(number1, number2, min)}`;
+  const expectedAnswer = `${findGCD(number1, number2, min)}`;
+
+  return [expression, expectedAnswer];
 };
 
-export default game(gameRule, getExpression, getExpectedAnswer);
+export default game(gameRule, getGameData);

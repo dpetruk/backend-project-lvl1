@@ -8,11 +8,17 @@ const getNumber = () => {
   return number;
 };
 
-const getExpectedAnswer = (number) => {
+const isEven = (number) => {
   if (number % 2 === 0) {
     return 'yes';
   }
   return 'no';
 };
 
-export default game(gameRule, getNumber, getExpectedAnswer);
+const getGameData = () => {
+  const number = getNumber();
+  const expectedAnswer = isEven(number);
+  return [number, expectedAnswer];
+};
+
+export default game(gameRule, getGameData);

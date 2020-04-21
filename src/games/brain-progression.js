@@ -3,37 +3,30 @@ import getRandomInt from '../getRandomInt.js';
 
 const gameRule = 'What number is missing in the progression?';
 
-const getExpression = () => {
+const progressionLength = 10;
+
+const getProgression = () => {
   const firstNumber = getRandomInt(100);
   const diff = getRandomInt(30);
-  const hiddenElementPosition = getRandomInt(9);
   const progression = [];
-  for (let i = 0; i < 10; i += 1) {
+  for (let i = 0; i < progressionLength; i += 1) {
     progression.push(firstNumber + diff * i);
   }
+  return progression;
+};
+
+const getHiddenPosition = () => getRandomInt(progressionLength - 1);
+
+const getGameData = () => {
+  const progression = getProgression();
+  const hiddenElementPosition = getHiddenPosition();
+  const hiddenElement = progression[hiddenElementPosition];
   progression[hiddenElementPosition] = '..';
-  return progression.join(' ');
+  const expression = progression.join(' ');
+
+  const expectedAnswer = `${hiddenElement}`;
+
+  return [expression, expectedAnswer];
 };
 
-const getHiddenPosition = (progression) => {
-  let hiddenElementPosition;
-  for (let i = 0; i < 10; i += 1) {
-    if (progression[i] === '..') {
-      hiddenElementPosition = i;
-    }
-  }
-  return hiddenElementPosition;
-};
-
-const getExpectedAnswer = (expression) => {
-  const progression = expression.split(' ');
-  const hiddenElementPosition = getHiddenPosition(progression);
-  if (hiddenElementPosition > 1) {
-    const diff = Number(progression[1]) - Number(progression[0]);
-    return `${Number(progression[hiddenElementPosition - 1]) + diff}`;
-  }
-  const diff = Number(progression[9]) - Number(progression[8]);
-  return `${Number(progression[hiddenElementPosition + 1]) - diff}`;
-};
-
-export default game(gameRule, getExpression, getExpectedAnswer);
+export default game(gameRule, getGameData);
