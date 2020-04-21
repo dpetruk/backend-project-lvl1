@@ -5,35 +5,46 @@ const getName = () => {
   return userName;
 };
 
-const getRandomInt = () => {
-  const max = 100;
-  return Math.floor(Math.random() * max);
-};
+const roundsNumber = 3;
 
 const getAnswer = () => {
   const answer = readlineSync.question('Your answer: ');
   return answer;
 };
 
-const getExpectedAnswer = (number) => {
-  if (number % 2 === 0) {
-    return 'yes';
-  }
-  return 'no';
-};
-
-const getTestResult = (expectedAnswer, answer) => {
+const checkAnswer = (expectedAnswer, answer) => {
   if (expectedAnswer === answer) {
+    console.log('Correct!');
     return true;
   }
+  console.log(`"${answer}" is wrong answer ;(. Correct answer was "${expectedAnswer}"`);
   return false;
 };
 
-const changeCounter = (result, counter) => {
-  if (result === true) return counter + 1;
-  return 0;
+const round = (roundsLeft, getExpression, getExpectedAnswer) => {
+  if (roundsLeft === 0) {
+    return 'Congratulations, ';
+  }
+
+  const currentExpression = getExpression();
+  console.log(`Question: ${currentExpression}`);
+
+  const result = checkAnswer(getExpectedAnswer(currentExpression), getAnswer());
+
+  if (!result) return 'Let\'s try again, ';
+
+  return round(roundsLeft - 1, getExpression, getExpectedAnswer);
 };
 
-export {
-  getName, getRandomInt, getExpectedAnswer, getAnswer, getTestResult, changeCounter,
+const game = (gameRule, getExpression, getExpectedAnswer) => {
+  console.log('Welcome to the Brain Games!');
+  const userName = getName();
+  console.log(`Hello, ${userName}!`);
+
+  console.log(gameRule);
+
+  return `${round(roundsNumber, getExpression, getExpectedAnswer)}${userName}!`;
 };
+
+export default game;
+export { getName };
