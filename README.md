@@ -12,3 +12,9 @@
 
   [![asciicast](https://asciinema.org/a/322328.svg)](https://asciinema.org/a/322328)
 </details>
+
+<details>
+  <summary>brain-gcd asciinema</summary>
+
+  [![asciicast](https://asciinema.org/a/322348.svg)](https://asciinema.org/a/322348)
+</details>
