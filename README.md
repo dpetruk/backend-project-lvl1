@@ -4,29 +4,29 @@
 <details>
   <summary>brain-even asciinema</summary>
 
-  [![asciicast](https://asciinema.org/a/322327.svg)](https://asciinema.org/a/322327)
+  [![asciicast](https://asciinema.org/a/322529.svg)](https://asciinema.org/a/322529)
 </details>
 
 <details>
   <summary>brain-calc asciinema</summary>
 
-  [![asciicast](https://asciinema.org/a/322328.svg)](https://asciinema.org/a/322328)
+  [![asciicast](https://asciinema.org/a/322531.svg)](https://asciinema.org/a/322531)
 </details>
 
 <details>
   <summary>brain-gcd asciinema</summary>
 
-  [![asciicast](https://asciinema.org/a/322348.svg)](https://asciinema.org/a/322348)
+  [![asciicast](https://asciinema.org/a/322533.svg)](https://asciinema.org/a/322533)
 </details>
 
 <details>
   <summary>brain-progression asciinema</summary>
 
-  [![asciicast](https://asciinema.org/a/322459.svg)](https://asciinema.org/a/322459)
+  [![asciicast](https://asciinema.org/a/322537.svg)](https://asciinema.org/a/322537)
 </details>
 
 <details>
   <summary>brain-prime asciinema</summary>
 
-  [![asciicast](https://asciinema.org/a/322462.svg)](https://asciinema.org/a/322462)
+  [![asciicast](https://asciinema.org/a/322541.svg)](https://asciinema.org/a/322541)
 </details>
