@@ -10,14 +10,14 @@ const getNumber = () => {
 
 const isEven = (number) => {
   if (number % 2 === 0) {
-    return 'yes';
+    return true;
   }
-  return 'no';
+  return false;
 };
 
 const getGameData = () => {
   const number = getNumber();
-  const expectedAnswer = isEven(number);
+  const expectedAnswer = isEven(number) ? 'yes' : 'no';
   return [number, expectedAnswer];
 };
 

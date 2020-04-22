@@ -8,16 +8,16 @@ const getNumber = () => getRandomInt(1000);
 const isPrime = (number) => {
   const threshold = Math.floor(number / 2);
   for (let i = 2; i <= threshold; i += 1) {
-    if (number % i === 0) return 'no';
+    if (number % i === 0) return false;
   }
-  return 'yes';
+  return true;
 };
 
 const getGameData = () => {
   const number = getNumber();
   const expression = `${number}`;
 
-  const expectedAnswer = isPrime(number);
+  const expectedAnswer = isPrime(number) ? 'yes' : 'no';
 
   return [expression, expectedAnswer];
 };
