@@ -7,30 +7,32 @@ const greetWithName = () => {
   return userName;
 };
 
-const game = (gameRule, getGameData) => {
+const gameLogic = (gameRule, getGameData) => {
   const userName = greetWithName();
 
-  const roundsNumber = 3;
+  let roundsCount = 3;
   console.log(gameRule);
 
-  let roundsLeft = roundsNumber;
+  while (roundsCount !== 0) {
+    const [questionContent, correctAnswer] = getGameData();
+    console.log(`Question: ${questionContent}`);
+    const userAnswer = readlineSync.question('Your answer: ');
 
-  while (roundsLeft !== 0) {
-    const [currentExpression, expectedAnswer] = getGameData();
-    console.log(`Question: ${currentExpression}`);
-    const answer = readlineSync.question('Your answer: ');
-
-    if (expectedAnswer !== answer) {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${expectedAnswer}"`);
-      return `Let's try again, ${userName}!`;
+    if (correctAnswer !== userAnswer) {
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
+      console.log(`Let's try again, ${userName}!`);
+      return false;
     }
     console.log('Correct!');
 
-    roundsLeft -= 1;
+    roundsCount -= 1;
   }
 
-  return `Congratulations, ${userName}!`;
+  console.log(`Congratulations, ${userName}!`);
+  return true;
 };
 
-export default game;
-export { greetWithName };
+export {
+  gameLogic as default,
+  greetWithName,
+};
