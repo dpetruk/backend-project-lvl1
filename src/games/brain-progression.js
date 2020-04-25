@@ -1,4 +1,4 @@
-import game from '../index.js';
+import gameLogic from '../index.js';
 import getRandomInt from '../getRandomInt.js';
 
 const gameRule = 'What number is missing in the progression?';
@@ -6,8 +6,8 @@ const gameRule = 'What number is missing in the progression?';
 const progressionLength = 10;
 
 const getProgression = () => {
-  const firstNumber = getRandomInt(100);
-  const diff = getRandomInt(30);
+  const firstNumber = getRandomInt(0, 100);
+  const diff = getRandomInt(1, 30);
   const progression = [];
   for (let i = 0; i < progressionLength; i += 1) {
     progression.push(firstNumber + diff * i);
@@ -15,18 +15,18 @@ const getProgression = () => {
   return progression;
 };
 
-const getHiddenPosition = () => getRandomInt(progressionLength - 1);
-
 const getGameData = () => {
   const progression = getProgression();
-  const hiddenElementPosition = getHiddenPosition();
-  const hiddenElement = progression[hiddenElementPosition];
+  const hiddenElementPosition = getRandomInt(0, progressionLength - 1);
+
+  const correctAnswer = `${progression[hiddenElementPosition]}`;
+
   progression[hiddenElementPosition] = '..';
-  const expression = progression.join(' ');
+  const questionContent = progression.join(' ');
 
-  const expectedAnswer = `${hiddenElement}`;
-
-  return [expression, expectedAnswer];
+  return [questionContent, correctAnswer];
 };
 
-export default game(gameRule, getGameData);
+const brainProgression = () => gameLogic(gameRule, getGameData);
+
+export default brainProgression;

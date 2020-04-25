@@ -1,25 +1,26 @@
-import game from '../index.js';
+import gameLogic from '../index.js';
 import getRandomInt from '../getRandomInt.js';
 
 const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const getNumber = () => getRandomInt(1000);
-
 const isPrime = (number) => {
-  const threshold = Math.floor(number / 2);
-  for (let i = 2; i <= threshold; i += 1) {
+  const maxDivisorToCheck = Math.floor(number / 2);
+  for (let i = 2; i <= maxDivisorToCheck; i += 1) {
     if (number % i === 0) return false;
   }
   return true;
 };
 
 const getGameData = () => {
-  const number = getNumber();
-  const expression = `${number}`;
+  const number = getRandomInt(2, 500);
 
-  const expectedAnswer = isPrime(number) ? 'yes' : 'no';
+  const questionContent = `${number}`;
 
-  return [expression, expectedAnswer];
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+
+  return [questionContent, correctAnswer];
 };
 
-export default game(gameRule, getGameData);
+const brainPrime = () => gameLogic(gameRule, getGameData);
+
+export default brainPrime;
