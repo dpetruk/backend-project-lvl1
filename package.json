@@ -1,7 +1,7 @@
 {
   "name": "backend-project-lvl1",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.2.0",
+  "description": "First project from backend JavaScript profession (hexlet.io)",
   "type": "module",
   "main": "src/index.js",
   "bin": {
