@@ -5,13 +5,18 @@
 
 ## Installing:
 
-1) Clone this repository to your filesystem.
-```git clone https://github.com/dpetruk/backend-project-lvl1.git```
+1) Clone this repository to your filesystem
 
-2) Go to the created directory named `backend-project-lvl1`.
+```sh
+git clone https://github.com/dpetruk/backend-project-lvl1.git
+```
 
-3) Create links to run games locally.
- ```npm link```
+2) Go to the created directory named `backend-project-lvl1`
+
+3) Create links to run games locally
+ ```sh
+ npm link
+ ```
 
 ## Running:
 
@@ -20,7 +25,9 @@
 You are given a number and asked if it is even or not.
 
 To run: 
-```brain-even```
+```sh
+brain-even
+```
 
 <details>
   <summary>brain-even gameplay (asciinema)</summary>
@@ -33,7 +40,9 @@ To run:
 You are asked to calculate given arithmetic expression.
 
 To run: 
-```brain-calc```
+```sh
+brain-calc
+```
 
 <details>
   <summary>brain-calc gameplay (asciinema)</summary>
@@ -43,10 +52,12 @@ To run:
 
 ### 3. Greatest Common Divisor
 
-Two number appear and you're asked for their greatest common divisor.
+Two number appear and you are asked for their greatest common divisor.
 
 To run: 
-```brain-gcd```.
+```sh
+brain-gcd
+```
 
 <details>
   <summary>brain-gcd gameplay (asciinema)</summary>
@@ -59,7 +70,9 @@ To run:
 You are asked to find a missing number in a given sequence.
 
 To run: 
-```brain-progression```.
+```sh
+brain-progression
+```
 
 <details>
   <summary>brain-progression gameplay (asciinema)</summary>
@@ -72,7 +85,9 @@ To run:
 You are asked if a given number is prime or not.
 
 To run: 
-```brain-prime```.
+```sh
+brain-prime
+```
 
 <details>
   <summary>brain-prime gameplay (asciinema)</summary>
