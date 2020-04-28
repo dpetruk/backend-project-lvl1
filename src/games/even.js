@@ -1,24 +1,19 @@
-import gameLogic from '../index.js';
+import runGameEngine from '../index.js';
 import getRandomInt from '../getRandomInt.js';
 
 const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const isEven = (number) => {
-  if (number % 2 === 0) {
-    return true;
-  }
-  return false;
-};
+const isEven = (number) => number % 2 === 0;
 
 const getGameData = () => {
   const number = getRandomInt(0, 100);
 
-  const questionContent = `${number}`;
+  const question = number.toString();
   const correctAnswer = isEven(number) ? 'yes' : 'no';
 
-  return [questionContent, correctAnswer];
+  return [question, correctAnswer];
 };
 
-const brainEven = () => gameLogic(gameRule, getGameData);
+const brainEven = () => runGameEngine(gameRule, getGameData);
 
 export default brainEven;
