@@ -1,9 +1,10 @@
-import gameLogic from '../index.js';
+import runGameEngine from '../index.js';
 import getRandomInt from '../getRandomInt.js';
 
 const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
+  if (number < 2) return false;
   const maxDivisorToCheck = Math.floor(number / 2);
   for (let i = 2; i <= maxDivisorToCheck; i += 1) {
     if (number % i === 0) return false;
@@ -14,13 +15,13 @@ const isPrime = (number) => {
 const getGameData = () => {
   const number = getRandomInt(2, 500);
 
-  const questionContent = `${number}`;
+  const question = number.toString();
 
   const correctAnswer = isPrime(number) ? 'yes' : 'no';
 
-  return [questionContent, correctAnswer];
+  return [question, correctAnswer];
 };
 
-const brainPrime = () => gameLogic(gameRule, getGameData);
+const brainPrime = () => runGameEngine(gameRule, getGameData);
 
 export default brainPrime;
