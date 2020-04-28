@@ -22,6 +22,6 @@ const getGameData = () => {
   return [question, correctAnswer];
 };
 
-const brainPrime = () => runGameEngine(gameRule, getGameData);
+const runBrainPrime = () => runGameEngine(gameRule, getGameData);
 
-export default brainPrime;
+export default runBrainPrime;

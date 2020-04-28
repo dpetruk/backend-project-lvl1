@@ -9,11 +9,12 @@ const getGameData = () => {
   const number = getRandomInt(0, 100);
 
   const question = number.toString();
+
   const correctAnswer = isEven(number) ? 'yes' : 'no';
 
   return [question, correctAnswer];
 };
 
-const brainEven = () => runGameEngine(gameRule, getGameData);
+const runBrainEven = () => runGameEngine(gameRule, getGameData);
 
-export default brainEven;
+export default runBrainEven;

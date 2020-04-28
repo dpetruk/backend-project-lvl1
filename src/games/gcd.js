@@ -24,6 +24,6 @@ const getGameData = () => {
   return [question, correctAnswer];
 };
 
-const brainGCD = () => runGameEngine(gameRule, getGameData);
+const runBrainGCD = () => runGameEngine(gameRule, getGameData);
 
-export default brainGCD;
+export default runBrainGCD;

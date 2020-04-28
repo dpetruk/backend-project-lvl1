@@ -28,6 +28,6 @@ const getGameData = () => {
   return [question, correctAnswer];
 };
 
-const brainCalc = () => runGameEngine(gameRule, getGameData);
+const runBrainCalc = () => runGameEngine(gameRule, getGameData);
 
-export default brainCalc;
+export default runBrainCalc;
