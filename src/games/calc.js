@@ -15,13 +15,13 @@ const getGameData = () => {
   let correctAnswer;
   switch (operator) {
     case '+':
-      correctAnswer = (number1 + number2).toString();
+      correctAnswer = `${number1 + number2}`;
       break;
     case '-':
-      correctAnswer = (number1 - number2).toString();
+      correctAnswer = `${number1 - number2}`;
       break;
     case '*':
-      correctAnswer = (number1 * number2).toString();
+      correctAnswer = `${number1 * number2}`;
       break;
     // no default
   }
