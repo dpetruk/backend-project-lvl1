@@ -1,14 +1,9 @@
 import readlineSync from 'readline-sync';
 
-const greetWithName = () => {
+const runGameEngine = (gameRule, getGameData) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  return userName;
-};
-
-const gameLogic = (gameRule, getGameData) => {
-  const userName = greetWithName();
 
   let roundsCount = 3;
   console.log(gameRule);
@@ -32,7 +27,4 @@ const gameLogic = (gameRule, getGameData) => {
   return true;
 };
 
-export {
-  gameLogic as default,
-  greetWithName,
-};
+export default runGameEngine;
