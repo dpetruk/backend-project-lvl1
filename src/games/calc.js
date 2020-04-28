@@ -1,29 +1,33 @@
-import gameLogic from '../index.js';
+import runGameEngine from '../index.js';
 import getRandomInt from '../getRandomInt.js';
 
 const gameRule = 'What is the result of the expression?';
 
-const getExpressionElements = () => {
+const getGameData = () => {
   const operators = ['+', '-', '*'];
-  const operatorIndex = getRandomInt(0, 2);
+  const operatorIndex = getRandomInt(0, operators.length - 1);
+  const operator = operators[operatorIndex];
   const number1 = getRandomInt(0, 100);
   const number2 = getRandomInt(0, 100);
-  return [number1, number2, operators[operatorIndex]];
-};
 
-const getGameData = () => {
-  const [number1, number2, operator] = getExpressionElements();
-
-  const questionContent = `${number1} ${operator} ${number2}`;
+  const question = `${number1} ${operator} ${number2}`;
 
   let correctAnswer;
-  if (operator === '+') correctAnswer = `${number1 + number2}`;
-  if (operator === '-') correctAnswer = `${number1 - number2}`;
-  if (operator === '*') correctAnswer = `${number1 * number2}`;
-
-  return [questionContent, correctAnswer];
+  switch (operator) {
+    case '+':
+      correctAnswer = (number1 + number2).toString();
+      break;
+    case '-':
+      correctAnswer = (number1 - number2).toString();
+      break;
+    case '*':
+      correctAnswer = (number1 * number2).toString();
+      break;
+    // no default
+  }
+  return [question, correctAnswer];
 };
 
-const brainCalc = () => gameLogic(gameRule, getGameData);
+const brainCalc = () => runGameEngine(gameRule, getGameData);
 
 export default brainCalc;
