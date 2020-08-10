@@ -3,6 +3,16 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/dpetruk/backend-project-lvl1)
 ![](https://github.com/dpetruk/backend-project-lvl1/workflows/Node.js%20CI/badge.svg)
 
+Five simple CLI games:
+
+1. [Is Number Even?](#1-is-number-even)
+2. [Calculator](#2-calculator)
+3. [Greatest Common Divisor](#3-greatest-common-divisor)
+4. [Arithmetic Progression](#4-arithmetic-progression)
+5. [Is Number Prime?](#5-is-number-prime)
+
+Give correct answer 3 times in a row to win.
+
 ## Installing:
 
 1) Clone this repository to your filesystem
@@ -22,7 +32,7 @@ git clone https://github.com/dpetruk/backend-project-lvl1.git
 
 ### 1. Is Number Even?
 
-You are given a number and asked if it is even or not.
+Tell if a given number is even or not.
 
 To run: 
 ```sh
@@ -30,14 +40,16 @@ brain-even
 ```
 
 <details>
-  <summary>brain-even gameplay (asciinema)</summary>
+  <summary>brain-even gameplay</summary>
 
-  [![asciicast](https://asciinema.org/a/323924.svg)](https://asciinema.org/a/323924)
+  ![](/docs/brain-even.gif)
+
+  [asciicast](https://asciinema.org/a/323924)
 </details>
 
 ### 2. Calculator
 
-You are asked to calculate given arithmetic expression.
+Calculate a given arithmetic expression.
 
 To run: 
 ```sh
@@ -45,14 +57,16 @@ brain-calc
 ```
 
 <details>
-  <summary>brain-calc gameplay (asciinema)</summary>
+  <summary>brain-calc gameplay</summary>
 
-  [![asciicast](https://asciinema.org/a/323925.svg)](https://asciinema.org/a/323925)
+  ![](/docs/brain-calc.gif)
+
+  [asciicast](https://asciinema.org/a/323925)
 </details>
 
 ### 3. Greatest Common Divisor
 
-Two number appear and you are asked for their greatest common divisor.
+Find a greatest common divisor for two numbers.
 
 To run: 
 ```sh
@@ -60,14 +74,16 @@ brain-gcd
 ```
 
 <details>
-  <summary>brain-gcd gameplay (asciinema)</summary>
+  <summary>brain-gcd gameplay</summary>
 
-  [![asciicast](https://asciinema.org/a/323926.svg)](https://asciinema.org/a/323926)
+  ![](/docs/brain-gcd.gif)
+
+  [asciicast](https://asciinema.org/a/323926)
 </details>
 
-### 4. Arithmetic Progession
+### 4. Arithmetic Progression
 
-You are asked to find a missing number in a given sequence.
+Find a missing number in a given sequence.
 
 To run: 
 ```sh
@@ -75,14 +91,16 @@ brain-progression
 ```
 
 <details>
-  <summary>brain-progression gameplay (asciinema)</summary>
+  <summary>brain-progression gameplay</summary>
 
-  [![asciicast](https://asciinema.org/a/323927.svg)](https://asciinema.org/a/323927)
+  ![](/docs/brain-progression.gif)
+
+  [asciicast](https://asciinema.org/a/323927)
 </details>
 
 ### 5. Is Number Prime?
 
-You are asked if a given number is prime or not.
+Tell if a given number is prime or not.
 
 To run: 
 ```sh
@@ -90,7 +108,9 @@ brain-prime
 ```
 
 <details>
-  <summary>brain-prime gameplay (asciinema)</summary>
+  <summary>brain-prime gameplay</summary>
 
-  [![asciicast](https://asciinema.org/a/323928.svg)](https://asciinema.org/a/323928)
+  ![](/docs/brain-prime.gif)
+
+  [asciicast](https://asciinema.org/a/323928)
 </details>
