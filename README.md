@@ -18,10 +18,10 @@ Give correct answer 3 times in a row to win.
 1) Clone this repository to your filesystem
 
 ```sh
-git clone https://github.com/dpetruk/backend-project-lvl1.git
+git clone https://github.com/dpetruk/frontend-project-lvl1.git
 ```
 
-2) Go to the created directory named `backend-project-lvl1`
+2) Go to the created directory named `frontend-project-lvl1`
 
 3) Create links to run games locally
  ```sh
